@@ -90,7 +90,7 @@ fun angleInRadian(deg: Int, min: Int, sec: Int): Double = (deg.toDouble() + min.
  * Найти длину отрезка, соединяющего точки на плоскости с координатами (x1, y1) и (x2, y2).
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
-fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
+fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = sqrt((x2 - x1).pow(2.0) + (y2 - y1).pow(2.0))
 
 /**
  * Простая (2 балла)
