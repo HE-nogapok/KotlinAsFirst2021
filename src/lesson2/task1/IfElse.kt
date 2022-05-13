@@ -136,15 +136,15 @@ fun rookOrBishopThreatens(
     rookX: Int, rookY: Int,
     bishopX: Int, bishopY: Int
 ): Int {
-    var xLineR1:Int = bishopX-(bishopY-1)
-    var yLineR2:Int = bishopY+(8-bishopX)
-    var xLineL1:Int = bishopX+(bishopY-1)
-    var yLineL2:Int = bishopY-(8-bishopX)
-    if ((kingX==rookX || kingY==rookY) && ((((kingX-xLineR1)*(yLineR2-1))-((8-xLineR1)*(kingY-1))==0) ||(((kingX-xLineL1)*(yLineL2-1))-((8-xLineL1)*(kingY-1))==0))) return 3
+    var xLineR1:Int = bishopX-bishopY
+    var yLineR2:Int = bishopY+(9-bishopX)
+    var xLineL1:Int = bishopX+bishopY
+    var yLineL2:Int = xLineL1
+    if ((kingX==rookX || kingY==rookY) && ((((kingX-xLineR1)*yLineR2)-((9-xLineR1)*kingY)==0) || (((kingX-xLineL1)*yLineL2)-((0-xLineL1)*kingY)==0))) return 3
    else
-        if (kingX!=rookX && kingY!=rookY && ((((kingX-xLineR1)*(yLineR2-1))-((8-xLineR1)*(kingY-1))==0) ||(((kingX-xLineL1)*(yLineL2-1))-((8-xLineL1)*(kingY-1))==0))) return 2
+        if (((((kingX-xLineR1)*yLineR2)-((9-xLineR1)*kingY)==0) || (((kingX-xLineL1)*yLineL2)-((0-xLineL1)*kingY)==0)) && kingX!=rookX && kingY!=rookY) return 2
         else
-            if (kingX==rookX || kingY==rookY && ((((kingX-xLineR1)*(yLineR2-1))-((8-xLineR1)*(kingY-1))!=0) && (((kingX-xLineL1)*(yLineL2-1))-((8-xLineL1)*(kingY-1))!=0))) return 1
+            if ((kingX==rookX || kingY==rookY) && (((kingX-xLineR1)*yLineR2)-((9-xLineR1)*kingY)!=0) && (((kingX-xLineL1)*yLineL2)-((0-xLineL1)*kingY)!=0)) return 1
     else return 0
 }
 

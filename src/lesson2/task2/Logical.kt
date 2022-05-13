@@ -33,7 +33,7 @@ fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
     var yLineR2:Int = y1+(9-x1)
     var xLineL1:Int = x1+y1
     var yLineL2:Int = xLineL1
-    if (x1==x2 || y1==y2 || (((x2-xLineR1)*yLineR2)-((0-xLineR1)*y2)==0) || (((x2-xLineL1)*yLineL2)-((0-xLineL1)*y2)==0)) return true
+    if (x1==x2 || y1==y2 || (((x2-xLineR1)*yLineR2)-((9-xLineR1)*y2)==0) || (((x2-xLineL1)*yLineL2)-((0-xLineL1)*y2)==0)) return true
     else return false
 }
 
