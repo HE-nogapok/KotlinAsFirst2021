@@ -28,7 +28,14 @@ fun isNumberHappy(number: Int): Boolean = ((number/1000)+(number/100%10))==((num
  * Определить, угрожают ли они друг другу. Вернуть true, если угрожают.
  * Считать, что ферзи не могут загораживать друг друга.
  */
-fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean = TODO()
+fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean {
+    var xLineR1:Int = x1-(y1-1)
+    var yLineR2:Int = y1+(8-x1)
+    var xLineL1:Int = x1+(y1-1)
+    var yLineL2:Int = y1-(8-x1)
+    if (x1==x2 || y1==y2 || (((x2-xLineR1)*(yLineR2-1))-((8-xLineR1)*(y2-1))==0) ||(((x2-xLineL1)*(yLineL2-1))-((8-xLineL1)*(y2-1))==0)) return true
+    else return false
+}
 
 
 /**
