@@ -109,7 +109,15 @@ return n2
  *
  * Для заданного числа n > 1 найти минимальный делитель, превышающий 1
  */
-fun minDivisor(n: Int): Int = TODO()
+fun minDivisor(n: Int): Int {
+    var count:Int = 0
+    for (i in 2..n){
+        var y = n % i
+        count = i
+        if (y==0) break
+    }
+    return count
+}
 
 /**
  * Простая (2 балла)
