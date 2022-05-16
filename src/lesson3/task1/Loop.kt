@@ -149,7 +149,18 @@ fun maxDivisor(n: Int): Int {
  * Написать функцию, которая находит, сколько шагов требуется для
  * этого для какого-либо начального X > 0.
  */
-fun collatzSteps(x: Int): Int = TODO()
+fun collatzSteps(x: Int): Int {
+var count:Int = 0
+var y:Int = x
+while (y>1){
+    if (y%2==0) {
+        y=y/2 }
+    else {
+        y=(3*y)+1}
+     count++
+    }
+return count
+}
 
 /**
  * Средняя (3 балла)
