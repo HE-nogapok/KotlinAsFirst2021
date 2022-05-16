@@ -169,7 +169,20 @@ return count
  * Для заданных чисел m и n найти наименьшее общее кратное, то есть,
  * минимальное число k, которое делится и на m и на n без остатка
  */
-fun lcm(m: Int, n: Int): Int = TODO()
+fun lcm(m: Int, n: Int): Int {
+    var delitel:Int = 0
+    var a = min (n,m)
+    var b = max (n,m)
+    for (i in b downTo 1){
+        if (b % i==0) {
+              if (a % i==0){
+                delitel = i
+                break
+            }
+        }
+    }
+    return n*m/delitel
+}
 
 /**
  * Средняя (3 балла)
