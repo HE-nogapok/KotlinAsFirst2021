@@ -209,7 +209,28 @@ fun isCoPrime(m: Int, n: Int): Boolean {
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun revert(n: Int): Int = TODO()
+fun revert(n: Int): Int {
+    var count = 0
+    var y = n.toLong()
+    var z = 10.toLong()
+    var a = 0
+    var b = 1
+    if (n == 0) count=1 else {
+        while (y != 0L) {
+            y = n / z
+            count++
+            z *= 10
+        }
+    }
+    for (i in 1..count) {
+        a = (n / b %10)*10.0.pow(count-1).toInt()+a
+        count--
+        b *= 10
+
+    }
+    return a
+}
+
 
 /**
  * Средняя (3 балла)
