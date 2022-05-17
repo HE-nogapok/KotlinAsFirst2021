@@ -248,7 +248,7 @@ fun isPalindrome(n: Int): Boolean {
     var a = 0
     var b = 1
     var c = 0
-    if (n == 0) count=1 else {
+    if (n < 10) return true else {
         while (y != 0L) {
             y = n / z
             count++
@@ -274,7 +274,25 @@ fun isPalindrome(n: Int): Boolean {
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun hasDifferentDigits(n: Int): Boolean = TODO()
+fun hasDifferentDigits(n: Int): Boolean {
+    var y = n.toLong()
+    var z = 10.toLong()
+    var a = (n % 10).toLong()
+    var b = 0L
+    if (n<10) return false else{
+        while (y != 0L) {
+            y = n / z
+            if (y > 0){
+                b = (y % 10)
+                z *= 10
+                }
+            else b=b
+            if (a!=b) return true
+        }
+    }
+    return false
+}
+
 
 /**
  * Средняя (4 балла)
