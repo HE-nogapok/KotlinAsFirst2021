@@ -325,7 +325,35 @@ fun cos(x: Double, eps: Double): Double = TODO()
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun squareSequenceDigit(n: Int): Int = TODO()
+fun squareSequenceDigit(n: Int): Int {
+    var y = n.toLong()
+    var z = 10.toLong()
+    var a = 0.toLong()
+    var x = 1.toLong()
+    var count = 0
+    var l = 0.toLong()
+    var m = 1.toLong()
+    for (i in 1..n){
+        a = x*x
+       while (y != 0L)  {
+            y = a / z
+            z *= 10
+            count ++
+        }
+       if (count>=n) break
+        x++
+        y = n.toLong()
+        z = 10.toLong()
+    }
+    var k = (count+1)-n
+    for (i in 1..k)
+    {
+        l = a / m % 10
+        m *=10
+    }
+    return l.toInt()
+}
+
 
 /**
  * Сложная (5 баллов)
