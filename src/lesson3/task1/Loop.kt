@@ -327,23 +327,21 @@ fun cos(x: Double, eps: Double): Double = TODO()
  */
 fun squareSequenceDigit(n: Int): Int {
     var y = n.toLong()
-    var z = 10.toLong()
-    var a = 0.toLong()
-    var x = 1.toLong()
+    var z = 10L
+    var a = 0
     var count = 0
-    var l = 0.toLong()
-    var m = 1.toLong()
+    var l = 0
+    var m = 1
     for (i in 1..n){
-        a = x*x
+        a = i*i
        while (y != 0L)  {
             y = a / z
             z *= 10
             count ++
         }
        if (count>=n) break
-        x++
         y = n.toLong()
-        z = 10.toLong()
+        z = 10L
     }
     var k = (count+1)-n
     for (i in 1..k)
@@ -351,7 +349,7 @@ fun squareSequenceDigit(n: Int): Int {
         l = a / m % 10
         m *=10
     }
-    return l.toInt()
+    return l
 }
 
 
@@ -364,4 +362,37 @@ fun squareSequenceDigit(n: Int): Int {
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun fibSequenceDigit(n: Int): Int = TODO()
+fun fibSequenceDigit(n: Int): Int {
+var y = n.toLong()
+var z = 10L
+var count = 2
+var l = 0
+var m = 1
+var n1 = 1
+var n2 = 1
+var k = 0
+if (n<3) l=1
+else {
+    for (i in 3..n) {
+        var a=n1+n2
+        n1=n2
+        n2=a
+        while (y != 0L)  {
+            y = n2.toLong() / z
+            z *= 10
+            count ++
+            }
+        if (count>=n) break
+        y = n.toLong()
+        z = 10L
+    }
+    k = (count+1)-n
+    for (i in 1..k)
+    {
+        l = n2 / m % 10
+        m *=10
+    }
+}
+return l
+}
+
