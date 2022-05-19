@@ -215,7 +215,7 @@ fun revert(n: Int): Int {
     var z = 10.toLong()
     var a = 0
     var b = 1
-    if (n == 0) count=1 else {
+    if (n < 10) a = n else {
         while (y != 0L) {
             y = n / z
             count++
