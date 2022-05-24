@@ -3,6 +3,7 @@
 package lesson4.task1
 
 import lesson1.task1.discriminant
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 // Урок 4: списки
@@ -168,8 +169,8 @@ fun times(a: List<Int>, b: List<Int>): Int {
     }
     else{
         for (i in 0 until a.size) {
-            val d = a[i]*b[i]
-            c = c+d
+            val d = a[i] * b[i]
+            c += d
         }
     }
     return c
@@ -183,7 +184,14 @@ fun times(a: List<Int>, b: List<Int>): Int {
  * Коэффициенты многочлена заданы списком p: (p0, p1, p2, p3, ..., pN).
  * Значение пустого многочлена равно 0 при любом x.
  */
-fun polynom(p: List<Int>, x: Int): Int = TODO()
+fun polynom(p: List<Int>, x: Int): Int {
+    var c = 0
+    for (i in 0 until p.size ) {
+        val d = p[i]*x.toDouble().pow(i).toInt()
+        c += d
+    }
+    return c
+}
 
 /**
  * Средняя (3 балла)
