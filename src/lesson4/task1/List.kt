@@ -203,7 +203,13 @@ fun polynom(p: List<Int>, x: Int): Int {
  *
  * Обратите внимание, что данная функция должна изменять содержание списка list, а не его копии.
  */
-fun accumulate(list: MutableList<Int>): MutableList<Int> = TODO()
+fun accumulate(list: MutableList<Int>): MutableList<Int> {
+    val copulist = list.toList()
+    for (i in 0 until copulist.size) {
+       list[i] = copulist.slice(0..i).sum()
+    }
+    return list
+}
 
 /**
  * Средняя (3 балла)
