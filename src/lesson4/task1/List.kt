@@ -226,6 +226,7 @@ while (c>1){
         if (c%i==0){
             c = c/i
             result.add(i)
+            break
         }
     }
 }
@@ -239,7 +240,20 @@ return result.sorted()
  * Результат разложения вернуть в виде строки, например 75 -> 3*5*5
  * Множители в результирующей строке должны располагаться по возрастанию.
  */
-fun factorizeToString(n: Int): String = TODO()
+fun factorizeToString(n: Int): String {
+    val result = mutableListOf<Int>()
+    var c = n
+    while (c>1){
+        for (i in 2..c){
+            if (c%i==0){
+                c = c/i
+                result.add(i)
+                break
+            }
+        }
+    }
+    return result.sorted().joinToString(separator = "*")
+}
 
 /**
  * Средняя (3 балла)
